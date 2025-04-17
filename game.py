@@ -82,7 +82,7 @@ def robotPlay():
             pos = getBestPlay(board)
             #send pos to the robot and 
             #wait until the robot send ok by serial port
-
+           
             print("Robot select: " , pos)
             board[pos] = ROBOT
             click(pos) #Execute robot choice
