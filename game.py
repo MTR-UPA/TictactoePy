@@ -85,38 +85,38 @@ def robotPlay():
             click(pos) #Execute robot choice
 
 def getBestPlay(board):
-    def encontrar_jugada(simbolo):
+    def findPlay(simbolo):
         for i, j, k in winCombination:
             linea = [board[i], board[j], board[k]]
             if linea.count(simbolo) == 2 and linea.count("") == 1:
                 return [i, j, k][linea.index("")]
         return None
 
-    # 1. Jugar para ganar
-    jugada = encontrar_jugada(ROBOT)
+    #Play to win
+    jugada = findPlay(ROBOT)
     if jugada is not None:
         return jugada
 
-    # 2. Bloquear al jugador
-    jugada = encontrar_jugada(HUMAN)
+    #Play to block
+    jugada = findPlay(HUMAN)
     if jugada is not None:
         return jugada
 
-    # 3. Centro
+    #Take center
     if board[4] == "":
         return 4
 
-    # 4. Esquinas primero
+    #Corner first
     for i in [0, 2, 6, 8]:
         if board[i] == "":
             return i
 
-    # 5. Lados
+    #Get sides
     for i in [1, 3, 5, 7]:
         if board[i] == "":
             return i
 
-    return None  # Sin jugadas disponibles
+    return None  #No play availables
 
 def reinit():
     #Set board clear, destroy labels and buttons
