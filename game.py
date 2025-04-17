@@ -27,8 +27,11 @@ buttons = []
 turn = ""
 board = [""]*9
 playsLabel = []
+
+#Set the symbol for the human and robot
 HUMAN = "O"
 ROBOT = "X"
+
 winCombination = [
         (0,1,2), (3,4,5), (6,7,8),
         (0,3,6), (1,4,7), (2,5,8),
@@ -78,7 +81,7 @@ def robotPlay():
         if posibles:
             pos = getBestPlay(board)
             #send pos to the robot and 
-            #wait until the robot send ok
+            #wait until the robot send ok by serial port
 
             print("Robot select: " , pos)
             board[pos] = ROBOT
