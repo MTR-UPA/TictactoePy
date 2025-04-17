@@ -85,10 +85,10 @@ def robotPlay():
             click(pos) #Execute robot choice
 
 def getBestPlay(board):
-    def findPlay(simbolo):
+    def findPlay(player):
         for i, j, k in winCombination:
             line = [board[i], board[j], board[k]]
-            if line.count(simbolo) == 2 and line.count("") == 1:
+            if line.count(player) == 2 and line.count("") == 1:
                 return [i, j, k][line.index("")]
         return None
 
