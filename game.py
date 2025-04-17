@@ -87,20 +87,20 @@ def robotPlay():
 def getBestPlay(board):
     def findPlay(simbolo):
         for i, j, k in winCombination:
-            linea = [board[i], board[j], board[k]]
-            if linea.count(simbolo) == 2 and linea.count("") == 1:
-                return [i, j, k][linea.index("")]
+            line = [board[i], board[j], board[k]]
+            if line.count(simbolo) == 2 and line.count("") == 1:
+                return [i, j, k][line.index("")]
         return None
 
     #Play to win
-    jugada = findPlay(ROBOT)
-    if jugada is not None:
-        return jugada
+    play = findPlay(ROBOT)
+    if play is not None:
+        return play
 
     #Play to block
-    jugada = findPlay(HUMAN)
-    if jugada is not None:
-        return jugada
+    play = findPlay(HUMAN)
+    if play is not None:
+        return play
 
     #Take center
     if board[4] == "":
