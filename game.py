@@ -155,10 +155,10 @@ def createButtons(window):
             buttons.append(button)
 
 def createMenu(window):
-    buttonStart = tk.Button(window, text= "Start", font=('Arial', 12), 
-                            command= start)
-    buttonReinit = tk.Button(window, text="Reinit", font=('Arial', 12),command=reinit)
-    buttonOut = tk.Button(window, text="Salir", font=('Arial', 14), command=close)
+    buttonStart = tk.Button(window, text= "Start", font=('Arial', 16), 
+                            command= start, width=12, height=2)
+    buttonReinit = tk.Button(window, text="Reinit", font=('Arial', 16),command=reinit, width=12, height=2)
+    buttonOut = tk.Button(window, text="Salir", font=('Arial', 16), command=close,width=12, height=2)
     buttonStart.pack(pady=10, fill= 'x')
     buttonReinit.pack(pady=10, fill='x')
     buttonOut.pack(pady=10, fill= 'x')
